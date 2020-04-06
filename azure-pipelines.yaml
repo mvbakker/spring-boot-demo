@@ -3,10 +3,17 @@ trigger:
     include:
     - '*'
 
-pool:
-  vmImage: 'Ubuntu-16.04'
+resources:
+  containers:
+  - container: u18
+    image: ubuntu:18.04
 
-container: ubuntu:16.04
+build-container:
+- job: RunInContainer
+  pool:
+    vmImage: 'Ubuntu-18.04'
 
-steps:
-- script: printenv
+  container: u18
+
+  steps:
+  - script: printenv
