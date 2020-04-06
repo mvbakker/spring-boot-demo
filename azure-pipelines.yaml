@@ -9,7 +9,7 @@ resources:
     image: ubuntu:18.04
 
 stages:
-- stage: build-container
+- stage: build_container
   jobs:
   - job: RunInContainer
     pool:
