@@ -8,12 +8,14 @@ resources:
   - container: u18
     image: ubuntu:18.04
 
-build-container:
-- job: RunInContainer
-  pool:
-    vmImage: 'Ubuntu-18.04'
+stages:
+- stage: build-container
+  jobs:
+  - job: RunInContainer
+    pool:
+      vmImage: 'Ubuntu-18.04'
 
-  container: u18
+    container: u18
 
-  steps:
-  - script: printenv
+    steps:
+    - script: printenv
